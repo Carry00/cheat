@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	
 	"github.com/cheat/cheat/internal/config"
 )
 
