@@ -10,11 +10,26 @@ import (
 )
 
 // Write writes output either directly to stdout, or through a pager,
-// depending upon configuration.
+// depending upon configuration. If AI processing is enabled, the output
+// will be processed by AI before being displayed.
 func Write(out string, conf config.Config) {
+	// Process with AI if enabled
+	var processedOut string
+	var err error
+	
+	if conf.AIEnabled {
+		processedOut, err = processWithAI(out, conf.AIURL, conf.AIKey)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "AI processing failed: %v\n", err)
+			processedOut = out // Fallback to original output
+		}
+	} else {
+		processedOut = out
+	}
+
 	// if no pager was configured, print the output to stdout and exit
 	if conf.Pager == "" {
-		fmt.Print(out)
+		fmt.Print(processedOut)
 		os.Exit(0)
 	}
 
@@ -25,7 +40,7 @@ func Write(out string, conf config.Config) {
 
 	// configure the pager
 	cmd := exec.Command(pager, args...)
-	cmd.Stdin = strings.NewReader(out)
+	cmd.Stdin = strings.NewReader(processedOut)
 	cmd.Stdout = os.Stdout
 
 	// run the pager and handle errors

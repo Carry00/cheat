@@ -28,6 +28,16 @@ formatter: terminal256
 # 'more' is recommended on Windows
 pager: PAGER_PATH
 
+# AI processing configuration
+# Enable or disable AI processing of cheatsheet output
+ai_enabled: false
+
+# The URL of the AI service endpoint
+ai_url: ""
+
+# The API key for the AI service
+ai_key: ""
+
 # Cheatpaths are paths at which cheatsheets are available on your local
 # filesystem.
 #

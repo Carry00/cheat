@@ -22,6 +22,10 @@ type Config struct {
 	Formatter  string         `yaml:"formatter"`
 	Pager      string         `yaml:"pager"`
 	Path       string
+	// AI related configuration
+	AIEnabled bool   `yaml:"ai_enabled"`
+	AIURL    string `yaml:"ai_url"`
+	AIKey    string `yaml:"ai_key"`
 }
 
 // New returns a new Config struct
