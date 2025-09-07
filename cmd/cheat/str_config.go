@@ -33,10 +33,25 @@ pager: PAGER_PATH
 ai_enabled: false
 
 # The URL of the AI service endpoint
+# For OpenAI API use: https://api.openai.com/v1/chat/completions
 ai_url: ""
 
 # The API key for the AI service
 ai_key: ""
+
+# The AI model to use (e.g., gpt-3.5-turbo, gpt-4)
+ai_model: "gpt-3.5-turbo"
+
+# System prompt for AI processing
+# This is the instruction given to AI about how to process the cheatsheet content
+ai_system_prompt: "你是一个AI助手，负责处理cheat命令的输出。请：
+# 1. 增强内容的可读性
+# 2. 为专业术语添加简短解释
+# 3. 保持原始命令和示例的准确性
+# 4. 如果内容包含代码，确保格式正确"
+
+# Maximum number of tokens for AI response
+ai_max_tokens: 2000
 
 # Cheatpaths are paths at which cheatsheets are available on your local
 # filesystem.

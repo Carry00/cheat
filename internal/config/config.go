@@ -23,9 +23,12 @@ type Config struct {
 	Pager      string         `yaml:"pager"`
 	Path       string
 	// AI related configuration
-	AIEnabled bool   `yaml:"ai_enabled"`
-	AIURL    string `yaml:"ai_url"`
-	AIKey    string `yaml:"ai_key"`
+	AIEnabled     bool   `yaml:"ai_enabled"`
+	AIURL        string `yaml:"ai_url"`
+	AIKey        string `yaml:"ai_key"`
+	AIModel      string `yaml:"ai_model"`
+	AISystemPrompt string `yaml:"ai_system_prompt"`
+	AIMaxTokens   int    `yaml:"ai_max_tokens"`
 }
 
 // New returns a new Config struct

@@ -18,7 +18,7 @@ func Write(out string, conf config.Config) {
 	var err error
 	
 	if conf.AIEnabled {
-		processedOut, err = processWithAI(out, conf.AIURL, conf.AIKey)
+		processedOut, err = processWithAI(out, conf)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "AI processing failed: %v\n", err)
 			processedOut = out // Fallback to original output
