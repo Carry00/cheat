@@ -1,6 +1,6 @@
 ![Workflow status](https://github.com/cheat/cheat/actions/workflows/build.yml/badge.svg)
 
-[English](./README.en.md) | [简体中文](./README.md) | [项目详情](./wiki.zh.md) 
+[English](./README.en.md) | [简体中文](./README.md) 
 
 cheat
 =====
